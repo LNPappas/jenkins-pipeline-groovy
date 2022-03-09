@@ -3,7 +3,8 @@ pipeline {
     stages{
         stage("init") {
             steps {
-                pipe = load 'pipeline.groovy'
+                def rootDir = pwd()
+                def pipe = load "${rootDir}@script/pipeline.groovy
                 pipe.initialize()
             }          
         }
