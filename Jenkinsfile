@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     def rootDir = pwd()
-                    def pipe = load "${rootDir}@script/pipeline.groovy"
+                    def pipe = load "${rootDir}/pipeline.groovy"
                     pipe.initialize()
                 }
             }          
