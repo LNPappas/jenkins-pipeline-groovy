@@ -3,7 +3,8 @@ pipeline {
     stages{
         stage("init") {
             steps {
-                echo "Hello World"
+                pipe = load 'pipeline.groovy'
+                pipe.initialize()
             }          
         }
     }
