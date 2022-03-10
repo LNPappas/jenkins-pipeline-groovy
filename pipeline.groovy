@@ -1,9 +1,9 @@
 def call() {
     pipeline {
         agent any
-        environment {
-            branch = getGitRepoURL()
-        }
+        // environment {
+        //     branch = getGitRepoURL()
+        // }
         stages {
             stage("initialize"){
                 steps {
@@ -12,7 +12,8 @@ def call() {
                         //     script: "git rev-parse --abbrev-ref HEAD"
                         //     returnStatus: true
                         // )
-                        println branch
+                        // println branch
+                        sh "echo Hello!"
                     }
                 }
             }

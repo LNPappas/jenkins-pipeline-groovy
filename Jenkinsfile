@@ -3,7 +3,8 @@ node {
         echo "building"
         script {
             def rootDir = pwd()
-            def pipe = load "${rootDir}/pipeline.groovy"
+            sh "echo ${rootDir}"
+            def pipe = load "pipeline.groovy"
             pipe.call()
         }
     }
