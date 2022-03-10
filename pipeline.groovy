@@ -5,7 +5,7 @@ def call(kwargs) {
             stage("initialize"){
                 steps {
                     script {
-                        def GIT_REF = sh(
+                        GIT_REF = sh(
                             script: "git rev-parse --abbrev-ref HEAD"
                             returnStatus: true
                         )
