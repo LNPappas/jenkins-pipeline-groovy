@@ -4,8 +4,10 @@ pipeline {
         stage("initialize"){
             steps {
                 script {
-                    def branch = getBranch()
-                    println "Current branch: ${branch}"
+                    String dir = pwd()
+                    sh "echo dir"
+                    // def branch = getBranch()
+                    // println "Current branch: ${branch}"
                 }
             }
         }
