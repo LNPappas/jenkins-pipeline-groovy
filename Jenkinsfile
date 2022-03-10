@@ -5,6 +5,7 @@ pipeline {
             steps {
                 script {
                     sh "git checkout main"
+                    sh "git pull"
                     sh "git branch"
                     sh "-d"
                     sh "ls"
