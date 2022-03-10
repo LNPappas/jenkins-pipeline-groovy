@@ -1,8 +1,9 @@
 pipeline {
     agent any
     stages{
-        stage("init") {
+        stage("build") {
             steps {
+                echo "building... "
                 withGroovy {
                     sh 'groovy --version'
                 }
