@@ -10,7 +10,7 @@ pipeline {
                 script {
                     def rootDir = pwd()
                     def pipe = load "${rootDir}/pipeline.groovy"
-                    pipe.initialize()
+                    pipe.call()
                 }
             }          
         }
