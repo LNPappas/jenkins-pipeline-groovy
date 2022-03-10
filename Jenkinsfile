@@ -6,6 +6,7 @@ pipeline {
                 script {
                     String dir = pwd()
                     sh "echo ${dir}"
+                    sh "ls -a"
                     // def branch = getBranch()
                     // println "Current branch: ${branch}"
                 }
