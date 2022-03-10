@@ -19,7 +19,7 @@ pipeline {
                 directories.each { directory ->
                 dir(directory.name){
                     def status = false
-                    def status = dir(".files/modules") {
+                    status = dir(".files/modules") {
                         sh(returnStatus:true, script:"git status .files/modules --porcelain")
                     }
                 }
