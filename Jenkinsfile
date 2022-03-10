@@ -25,7 +25,7 @@ pipeline {
                         dir(directory.name){
                             echo "directory: ${directory.name}"                          
                             status = dir(".files/modules") {
-                                sh(returnStatus:true, script:"git status .files/modules --porcelain")
+                                sh(returnStatus:true, script:"git status . --porcelain")
                             }
                             
                         }
