@@ -4,10 +4,7 @@ pipeline {
         stage("initialize"){
             steps {
                 script {
-                    def branch = sh(
-                        script: "git rev-parse --abbrev-ref HEAD"
-                        returnStdout: true
-                    ).trim()
+                    def branch = pipeline.getBranch()
                     println "Current branch: ${branch}"
                 }
             }
