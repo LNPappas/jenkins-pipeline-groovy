@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     String dir = pwd()
-                    sh "echo dir"
+                    sh "echo ${dir}"
                     // def branch = getBranch()
                     // println "Current branch: ${branch}"
                 }
