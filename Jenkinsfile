@@ -10,7 +10,7 @@ pipeline {
                     sh "git branch"
                     sh "git rev-parse --abbrev-ref HEAD"
                     // def branch = getBranch()
-                    println "Current branch: ${branch}"
+                    // println "Current branch: ${branch}"
                 }
             }
         }
