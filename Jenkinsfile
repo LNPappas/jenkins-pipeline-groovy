@@ -17,7 +17,7 @@ pipeline {
                 script {
                     String mainDir = pwd()
                     dir("${mainDir}/orgs") {
-                        def directories = findFiles().findAll { file -> file.directory }
+                        def directories = findFiles().findAll{ file -> file.directory }
                         directories.each { directory ->
                         dir(directory.name){
                             def status = false
