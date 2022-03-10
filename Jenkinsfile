@@ -21,7 +21,8 @@ pipeline {
                         def status = false
                         def directories = findFiles().findAll{ file -> file.directory }
                         directories.each { directory ->
-                        dir(directory.name){                          
+                        dir(directory.name){
+                            echo "directory: ${directory.name}"                          
                             status = dir(".files/modules") {
                                 sh(returnStatus:true, script:"git status .files/modules --porcelain")
                             }
