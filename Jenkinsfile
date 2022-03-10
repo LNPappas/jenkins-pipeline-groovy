@@ -28,7 +28,7 @@ pipeline {
                             
                         }
                         println "status is: ${status}"
-                        if (status == true) {
+                        if (status == 0) {
                             println "Error: changes made in modules folder"
                         }
                         }
