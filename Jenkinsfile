@@ -13,19 +13,23 @@ pipeline {
             }
         }
         stage ("directory"){
-            String mainDir = pwd()
-            dir("${mainDir}/orgs") {
-                def directories = findFiles().findAll { file -> file.directory }
-                directories.each { directory ->
-                dir(directory.name){
-                    def status = false
-                    status = dir(".files/modules") {
-                        sh(returnStatus:true, script:"git status .files/modules --porcelain")
+            steps {
+                script {
+                    String mainDir = pwd()
+                    dir("${mainDir}/orgs") {
+                        def directories = findFiles().findAll { file -> file.directory }
+                        directories.each { directory ->
+                        dir(directory.name){
+                            def status = false
+                            status = dir(".files/modules") {
+                                sh(returnStatus:true, script:"git status .files/modules --porcelain")
+                            }
+                        }
+                        if (status == true) {
+                            println "Error: changes made in modules folder"
+                        }
+                        }
                     }
-                }
-                if (status == true) {
-                    println "Error: changes made in modules folder"
-                }
                 }
             }
         }
