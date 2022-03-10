@@ -1,4 +1,4 @@
-def call(kwargs) {
+def call() {
     pipeline {
         agent any
         environment {
