@@ -25,6 +25,7 @@ pipeline {
                             status = dir(".files/modules") {
                                 sh(returnStatus:true, script:"git status .files/modules --porcelain")
                             }
+                            println "status is: ${status}"
                         }
                         if (status == true) {
                             println "Error: changes made in modules folder"
