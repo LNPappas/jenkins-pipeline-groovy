@@ -5,9 +5,8 @@ pipeline {
             steps {
                 script {
                     sh "git checkout main"
-                    sh "git pull"
+                    sh "git config pull.rebase false"
                     sh "git branch"
-                    sh "-d"
                     sh "ls"
                     def branch = sh(returnStdout:true, script:"git rev-parse --abbrev-ref HEAD")
                     println "Current branch: ${branch}"
